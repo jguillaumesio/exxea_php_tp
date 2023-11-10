@@ -1,4 +1,4 @@
-# MVC JEE
+# MVC PHP
 
 ## Requirements
 - PHP >= 8.1 (optional)
