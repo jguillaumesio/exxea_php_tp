@@ -1,0 +1,66 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+    <div class="book-detail">
+        <div class="book-header">
+            <button class="primary_button" onclick="window.location.assign('/')">
+                Retour
+            </button>
+            <h2 style="flex:1;text-align: center;">{{ book['title'] }}</h2>
+            <form action="/book/delete/{{ book['id'] }}" method="post">
+                <button type="submit" class="primary_button">
+                    Supprimer
+                </button>
+            </form>
+        </div>
+        <div class="book-info">
+            <div class="info-item">
+                <strong>Langue:</strong> {{ book['language'] }}
+            </div>
+            <div class="info-item">
+                <strong>ISBN:</strong> {{ book['ISBN'] }}
+            </div>
+            <div class="info-item">
+                <strong>Thème:</strong> {{ book['theme'] }}
+            </div>
+            <div class="info-item">
+                <strong>Nombre de pages:</strong> {{ book['page_nbr'] }}
+            </div>
+            <div class="info-item">
+                <strong>Format:</strong> {{ book['format'] }}
+            </div>
+            <div class="info-item">
+                <strong>Auteur:</strong> {{ book['author_firstname']|slice(0,1) }}.{{ book['author_lastname'] }}
+            </div>
+            <div class="info-item">
+                <strong>Editeur:</strong> {{ book['editor'] }}
+            </div>
+            <div class="info-item">
+                <strong>Année d'édition:</strong> {{ book['edition_year'] }}
+            </div>
+            <div class="info-item">
+                <strong>Prix:</strong> {{ book['price'] }}€
+            </div>
+        </div>
+
+        <div class="actions">
+            <button onclick='toggleEdit(event, `{{ book|json_encode|raw }}`)' class="primary_button">
+                Modifier
+            </button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        {{ include('book/form.twig.js')|raw }}
+        const toggleEdit = (e, book) => {
+            book = JSON.parse(book);
+            e.preventDefault();
+            const template = getForm({
+                form_button: 'Modifier',
+                form_action: `/book/${book.id}`,
+                book
+            });
+            toggleModal('Modifier', template, false);
+        }
+    </script>
+{% endblock %}

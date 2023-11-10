@@ -1,0 +1,17 @@
+{
+    "name": "guillaume/php",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "GuiJ14",
+            "email": "gjacopin@grinto.fr"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.0"
+    }
+}

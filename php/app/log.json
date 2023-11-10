@@ -1,0 +1,58 @@
+{
+    "timestamp": "2023-11-10 09:18:42",
+    "message": "SQLSTATE[HY000]: General error: 1366 Incorrect decimal value: ' ' for column 'price' at row 1",
+    "file": "\/usr\/src\/app\/src\/controllers\/BookController.php",
+    "line": 60,
+    "trace": [
+        {
+            "file": "\/usr\/src\/app\/src\/controllers\/BookController.php",
+            "line": 60,
+            "function": "execute",
+            "class": "PDOStatement",
+            "type": "->"
+        },
+        {
+            "file": "\/usr\/src\/app\/src\/Router.php",
+            "line": 53,
+            "function": "create",
+            "class": "App\\controllers\\BookController",
+            "type": "->"
+        },
+        {
+            "file": "\/usr\/src\/app\/index.php",
+            "line": 7,
+            "function": "handle",
+            "class": "Router",
+            "type": "::"
+        }
+    ]
+}
+{
+    "timestamp": "2023-11-10 09:21:04",
+    "message": "SQLSTATE[HY000]: General error: 1366 Incorrect decimal value: ' ' for column 'price' at row 1",
+    "file": "\/usr\/src\/app\/src\/controllers\/BookController.php",
+    "line": 60,
+    "trace": [
+        {
+            "file": "\/usr\/src\/app\/src\/controllers\/BookController.php",
+            "line": 60,
+            "function": "execute",
+            "class": "PDOStatement",
+            "type": "->"
+        },
+        {
+            "file": "\/usr\/src\/app\/src\/Router.php",
+            "line": 53,
+            "function": "create",
+            "class": "App\\controllers\\BookController",
+            "type": "->"
+        },
+        {
+            "file": "\/usr\/src\/app\/index.php",
+            "line": 7,
+            "function": "handle",
+            "class": "Router",
+            "type": "::"
+        }
+    ]
+}
